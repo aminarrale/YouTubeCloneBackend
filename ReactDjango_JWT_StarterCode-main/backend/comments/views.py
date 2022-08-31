@@ -11,15 +11,11 @@ from rest_framework.decorators import api_view, permission_classes
 # Create your views here.
 @api_view(['GET'])
 @permission_classes([AllowAny])
-def get_comments(request, video_id):
-    try:
-        comments = Comment.objects.filter(video_id=video_id)
-    except ObjectDoesNotExist:
-        return Response({"error": "No comments exist with that videoId"})
-
+def get_comments(request):
+    comments = Comment.objects.filter(video_id=video_id)
     serializer = CommentSerializer(comments, many=True)
     return Response(serializer.data)
-
+\
 
 # POST new comment (protected)
 @api_view(['POST'])
