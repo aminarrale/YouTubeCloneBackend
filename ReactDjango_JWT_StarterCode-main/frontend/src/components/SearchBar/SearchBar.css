@@ -1,0 +1,10 @@
+.filter-button{
+    margin-left: 35px;
+    width: 148px;
+    height: 25px;
+    border-radius: 20px;
+    background-color: #1867AB;
+    font-size: 17px;
+    color: white;
+
+}
